@@ -56,3 +56,78 @@ export const getTasklist = async (query: string) => {
     throw new Error("Failed to fetch tasks data");
   }
 };
+
+export const getData = async (query: string) => {
+  try {
+    const task = await prisma.task.findMany({
+        where: {
+            title: {
+            contains: query,
+            },
+        },
+        orderBy: {
+            createdAt: "desc",
+        },
+    });
+    return task;
+  } catch (error) {
+    throw new Error("Failed to fetch task data");
+  }
+};
+ 
+
+export const getTaskById = async (id: string) => {
+  try {
+    const task = await prisma.task.findUnique({
+      where: { id },
+    });
+    return task;
+  } catch (error) {
+    throw new Error("Failed to fetch contact data");
+  }
+};
+ 
+export const updateTask = async (
+  id: string,
+  prevSate: any,
+  formData: FormData
+) => {
+  const validatedFields = TaskSchema.safeParse(
+    Object.fromEntries(formData.entries())
+  );
+  
+  if (!validatedFields.success) {
+    return {
+      Error: validatedFields.error.flatten().fieldErrors,
+    };
+  }
+
+  try {
+    await prisma.task.update({
+      data: {
+        title: validatedFields.data.title,
+        description: validatedFields.data.description,   
+      },
+      where: { id },
+    });
+    console.log("success");
+  } catch (error) {
+    return { message: "Failed to update task" };
+  }
+  
+  revalidatePath("/task");
+  redirect("/task");
+};
+
+export const deleteTask = async (id: string) => {
+  try {
+    await prisma.task.delete({
+      where: { id },
+    });
+  } catch (error) {
+    return { message: "Failed to delete task" };
+  }
+  
+  revalidatePath("/task");
+};
+

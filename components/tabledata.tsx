@@ -1,4 +1,8 @@
-import { getTasklist } from "@/lib/action";
+// import { getTasklist } from "@/lib/action";
+import { getData } from "@/lib/action";
+import { formatDate } from "@/lib/utlis";
+import Link from "next/link";
+import { DeleteButton } from "./delete";
 
 
 const Task = async ({
@@ -6,7 +10,7 @@ const Task = async ({
      }: {
     query: string;
      }) => {
-        const tasks = await getTasklist(query);
+        const tasks = await getData(query);
     return(
         <table className="table table-zebra">
             <thead className="text-sm text-gray-700 uppercase bg-gray-50">
@@ -23,11 +27,19 @@ const Task = async ({
                      <td className="py-3 px-6">{index +1}</td>
                      <td className="py-3 px-6">{rs.title}</td>
                      <td className="py-3 px-6">{rs.description}</td>
-                     <td className="py-3 px-6">July 11</td>
+                     <td className="py-3 px-6">
+                        {formatDate(rs.createdAt.toString())}
+                     </td>
                      
                
                 <td className="flex justify-center gap-1 py-3">
-                    Edit | Delete
+                    <Link
+                       href={`/task/edit/${rs.id}`}
+                       className="btn btn-info"
+                    >
+                      Edit
+                    </Link>
+                    <DeleteButton id={rs.id}/>
                 </td>
                 </tr>
                 ))}
