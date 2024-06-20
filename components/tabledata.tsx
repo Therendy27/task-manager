@@ -12,7 +12,7 @@ const Task = async ({
      }) => {
         const tasks = await getData(query);
     return(
-        <table className="table table-zebra">
+        <table className="table  bg-white">
             <thead className="text-sm text-gray-700 uppercase bg-gray-50">
                 <tr>
                     <th className="py-3 px-6">#</th>
@@ -23,7 +23,7 @@ const Task = async ({
             </thead>
             <tbody>
                 {tasks.map((rs,index) => (
-                <tr className="bg-white border-b"> 
+                <tr className=" border-b"> 
                      <td className="py-3 px-6">{index +1}</td>
                      <td className="py-3 px-6">{rs.title}</td>
                      <td className="py-3 px-6">{rs.description}</td>

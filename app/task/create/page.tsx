@@ -18,7 +18,7 @@ const CreateTaskPage = () => {
             type="text"
             name="title"
             id="title"
-            className="input input-bordered input-primary w-full max-w-xs"
+            className="input input-bordered bg-white w-full max-w-xs"
             placeholder="Title..."
           />
           <div id="name-error" aria-live="polite" aria-atomic="true">
@@ -34,7 +34,7 @@ const CreateTaskPage = () => {
             type="text"
             name="description"
             id="description"
-            className="input input-bordered input-primary w-full max-w-xs"
+            className="input input-bordered bg-white w-full max-w-xs"
             placeholder="Description..."
           />
           <div id="name-error" aria-live="polite" aria-atomic="true">

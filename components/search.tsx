@@ -21,10 +21,10 @@ const Search = () => {
   }, 300);
   
   return (
-    <div className="relative flex flex-1 mb-5 ml-5 mr-5">
+    <div className="relative  flex flex-1 mb-5 ml-5 mr-5">
       <input
         type="text"
-        className="input input-bordered input-accent w-full"
+        className="input bg-white input-bordered input-accent w-full"
         placeholder="Search..."
         onChange={(e) => handleSearch(e.target.value)}
         defaultValue={searchParams.get("query")?.toString()}

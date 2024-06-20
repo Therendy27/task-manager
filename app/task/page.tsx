@@ -17,7 +17,7 @@ const query = searchParams?.query || "";
     <div className="w-screen py-20 flex justify-center flex-col items-center">
         <div className="flex items-center justify-between gap-1 mb-5">
             <h1 className="text-3xl font-bold">
-                Next.js Task Manager/CRUD and Search with Prisma Mysql | TailwindCSS DaisyUI
+                Next.js Task Manager and Search with Prisma Mysql | TailwindCSS DaisyUI
             </h1>
         </div>
             <div className="overflow-x-auto">

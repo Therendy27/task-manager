@@ -20,7 +20,7 @@ const UpdateForm = ({ task }: { task: Task }) => {
             type="text"
             name="title"
             id="title"
-            className="input input-bordered input-primary w-full max-w-xs"
+            className="input input-bordered bg-white w-full max-w-xs"
             placeholder="Full Name..."
             defaultValue={task.title}
           />
@@ -36,12 +36,12 @@ const UpdateForm = ({ task }: { task: Task }) => {
             type="text"
             name="description"
             id="description"
-            className="input input-bordered input-primary w-full max-w-xs"
+            className="input input-bordered bg-white w-full max-w-xs"
             placeholder="Email..."
             defaultValue={task.description}
           />
           <div id="email-error" aria-live="polite" aria-atomic="true">
-            <p className="mt-2 text-sm text-red-500">{state?.Error?.description}</p>
+            <p className="mt-2  text-sm text-red-500">{state?.Error?.description}</p>
           </div>
         </div>
         <button className="btn btn-primary">Update</button>
