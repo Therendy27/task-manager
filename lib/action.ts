@@ -115,8 +115,8 @@ export const updateTask = async (
     return { message: "Failed to update task" };
   }
   
-  revalidatePath("/task");
-  redirect("/task");
+  revalidatePath("/");
+  redirect("/");
 };
 
 export const deleteTask = async (id: string) => {
@@ -128,6 +128,6 @@ export const deleteTask = async (id: string) => {
     return { message: "Failed to delete task" };
   }
   
-  revalidatePath("/task");
+  revalidatePath("/");
 };
 
