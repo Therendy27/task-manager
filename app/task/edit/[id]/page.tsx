@@ -1,5 +1,4 @@
-//app\employee\edit\[id]\page.tsx
-import UpdateForm from "@/components/editform";
+import { UpdateForm } from "@/components/editform";
 import { getTaskById } from "@/lib/action";
 import { notFound } from "next/navigation";
   

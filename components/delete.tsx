@@ -1,4 +1,4 @@
-//components\delete.tsx
+
 import { deleteTask} from "@/lib/action";
   
 export const DeleteButton = ({ id }: { id: string }) => {

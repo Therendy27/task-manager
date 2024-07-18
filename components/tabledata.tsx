@@ -1,11 +1,11 @@
-// import { getTasklist } from "@/lib/action";
+ import { getTasklist } from "@/lib/action";
 import { getData } from "@/lib/action";
 import { formatDate } from "@/lib/utlis";
 import Link from "next/link";
 import { DeleteButton } from "./delete";
 
 
-const Task = async ({
+export const Task = async ({
     query
      }: {
     query: string;
@@ -51,4 +51,3 @@ const Task = async ({
   }
 
 
-export default Task;

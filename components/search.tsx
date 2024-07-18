@@ -1,10 +1,10 @@
-//components\search.tsx
+
 "use client";
   
 import { useSearchParams, usePathname, useRouter } from "next/navigation";
 import { useDebouncedCallback } from "use-debounce"; //npm i use-debounce https://www.npmjs.com/package/use-debounce
   
-const Search = () => {
+export const Search = () => {
   const searchParams = useSearchParams();
   const pathname = usePathname();
   const { replace } = useRouter();
@@ -33,4 +33,4 @@ const Search = () => {
   );
 };
   
-export default Search;
+

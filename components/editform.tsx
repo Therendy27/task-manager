@@ -1,11 +1,11 @@
-//components\editform.tsx
+
 "use client";
   
 import { updateTask } from "@/lib/action";
 import { useFormState } from "react-dom";
 import type { Task } from "@prisma/client";
   
-const UpdateForm = ({ task }: { task: Task }) => {
+export const UpdateForm = ({ task }: { task: Task }) => {
     const UpdateTaskWithId = updateTask.bind(null, task.id);
     const [state, formAction] = useFormState(UpdateTaskWithId, null);
   
@@ -50,4 +50,3 @@ const UpdateForm = ({ task }: { task: Task }) => {
   );
 };
   
-export default UpdateForm;
