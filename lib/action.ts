@@ -32,9 +32,9 @@ try {
   } catch (error) {
     return { message: "Failed to create new task" };
   }
-  
-  revalidatePath("/task");
-  redirect("/task");
+
+  revalidatePath("/");
+  redirect("/");
 };
  
 

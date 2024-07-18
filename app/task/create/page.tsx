@@ -9,7 +9,7 @@ const CreateTaskPage = () => {
         <div className="max-w-md mx-auto mt-5">
             <h1 className="text-2xl text-center mb-2">Add New Task </h1>
             <div>
-            <form action={formAction}>
+       <form action={formAction}>
         <div className="mb-5">
           <label htmlFor="name" className="block text-sm font-medium text-gray-900">
             Title
