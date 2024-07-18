@@ -23,7 +23,7 @@ export const Task = async ({
             </thead>
             <tbody>
                 {tasks.map((rs,index) => (
-                <tr className=" border-b"> 
+                <tr key={index} className=" border-b"> 
                      <td className="py-3 px-6">{index +1}</td>
                      <td className="py-3 px-6">{rs.title}</td>
                      <td className="py-3 px-6">{rs.description}</td>
